@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:gravity="center">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/txtV_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANDROID CONCEPTS"
+        android:textAlignment="center"
+        android:textColor="#ef0ed1"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txtV_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANTONY"
+        android:textColor="#0e12f4"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtV_first"
+        android:layout_toRightOf="@+id/imageView" />
+    <TextView
+        android:id="@+id/txtV_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANTONY"
+        android:textColor="#0e12f4"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtV_last"
+        android:layout_toRightOf="@+id/imageView" />
+    <TextView
+        android:id="@+id/txtV_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANTONY"
+        android:textColor="#0e12f4"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtV_team"
+        android:layout_toRightOf="@+id/imageView" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/userlogin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
+</LinearLayout>

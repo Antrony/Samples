@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".uil.TabFragment">
+    <item
+        android:id="@+id/refresh"
+        android:orderInCategory="100"
+        android:title="Refresh"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_day_night_no"
+        android:orderInCategory="100"
+        android:title="Day Mode"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_day_night_yes"
+        android:orderInCategory="100"
+        android:title="Night Mode"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#9C27B0">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+<LinearLayout
+    android:id="@+id/lLayout_register"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_first"
+            android:text="First Name"
+            android:layout_marginTop="50dp"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_last"
+            android:text="Last Name"
+            android:layout_below="@id/txtV_first"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_team"
+            android:text="Team"
+            android:layout_below="@id/txtV_last"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_username"
+            android:text="Username"
+            android:padding="8dp"
+            android:layout_below="@id/txtV_team"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_password"
+            android:text="Password"
+            android:layout_below="@id/txtV_username"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtV_confirm_password"
+            android:text="Confirm Password"
+            android:layout_below="@id/txtV_password"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:layout_marginRight="25dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtV_first"
+            android:layout_marginTop="50dp"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtV_last"
+            android:layout_below="@id/etxtV_first"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_team"
+            android:layout_below="@id/etxtV_last"
+            android:textSize="17dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtV_username"
+            android:padding="5dp"
+            android:layout_below="@id/spin_team"
+            android:textSize="17dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtV_password"
+            android:inputType="textPassword"
+            android:layout_below="@id/etxtV_username"
+            android:padding="6dp"
+            android:textSize="17dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtV_confirm_password"
+            android:inputType="textPassword"
+            android:layout_below="@id/etxtV_password"
+            android:padding="8dp"
+            android:textSize="17dp"/>
+    </RelativeLayout>
+</LinearLayout>
+    <LinearLayout android:layout_below="@+id/lLayout_register"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back_to_login"
+        android:text="login page"
+        android:layout_marginLeft="90dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_register"
+        android:text="Register" />
+    </LinearLayout>
+</RelativeLayout>

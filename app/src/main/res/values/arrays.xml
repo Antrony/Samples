@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="teams">
+        <item>Moveo</item>
+        <item>Transform</item>
+        <item>Neo</item>
+        <item>Geo</item>
+        <item>Exos</item>
+        <item>Greens</item>
+    </string-array>
+</resources>
