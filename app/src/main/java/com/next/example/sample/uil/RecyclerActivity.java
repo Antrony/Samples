@@ -1,6 +1,7 @@
 package com.next.example.sample.uil;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -197,7 +199,7 @@ public class RecyclerActivity extends AppCompatActivity  implements NavigationVi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_menu, menu);
+//        getMenuInflater().inflate(R.menu.navigation_menu, menu);
         return true;
     }
     @SuppressWarnings("StatementWithEmptyBody")
@@ -220,13 +222,13 @@ public class RecyclerActivity extends AppCompatActivity  implements NavigationVi
         } else if (id == R.id.nav_map) {
             Intent intent=new Intent(this,MapsActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_xml_parsing) {
-//            Intent intent=new Intent(this,XMLParsingActivity.class);
+//        } else if (id == R.id.nav_xml_parsing) {
+////            Intent intent=new Intent(this,XMLParsingActivity.class);
+////            startActivity(intent);
+//        } else if (id == R.id.nav_json_parsing) {
+//            Intent intent = getIntent();
+//            finish();
 //            startActivity(intent);
-        } else if (id == R.id.nav_json_parsing) {
-            Intent intent = getIntent();
-            finish();
-            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -238,12 +240,12 @@ public class RecyclerActivity extends AppCompatActivity  implements NavigationVi
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -254,7 +256,35 @@ public class RecyclerActivity extends AppCompatActivity  implements NavigationVi
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 } else {
-                    super.onBackPressed();
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+                    // set title
+                    alertDialogBuilder.setTitle("Employee Portal");
+
+                    // set dialog message
+                    alertDialogBuilder
+                            .setMessage("Do you wanna exit!")
+                            .setCancelable(true)
+                            .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    // if this button is clicked, close
+                                    // current activity
+                                    finish();
+                                }
+                            })
+                            .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    // if this button is clicked, just close
+                                    // the dialog box and do nothing
+                                    dialog.cancel();
+                                }
+                            });
+
+                    // create alert dialog
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // show it
+                    alertDialog.show();
                 }
             }
 

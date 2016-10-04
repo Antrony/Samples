@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -45,16 +46,12 @@ public class EmployeeListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_list);
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Employee Listview");
 // check if you are connected or not
-        progress = new ProgressDialog(EmployeeListActivity.this);
-
-        progress.setTitle("Network Status");
-        progress.setIndeterminate(true);
-        progress.setCancelable(true);
-        progress.show();
-
-        if (isConnected()) {
-            progress.setMessage("You are connected to Internet");
+       if (isConnected()) {
+            Toast.makeText(EmployeeListActivity.this, "You are connected to Internet", Toast.LENGTH_SHORT).show();
             try {
                 syncDataToServer();
                 System.out.println("Json String is length----=>" + mJSON_Str_for_Sync.length());
@@ -63,7 +60,7 @@ public class EmployeeListActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
-            progress.setMessage("You are not connected to Internet!! Please Check your Connection Settings!!!");
+            Toast.makeText(this,"You are not connected to Internet!! Please Check your Connection Settings!!!",Toast.LENGTH_SHORT).show();
         }
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.listview);

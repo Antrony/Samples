@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#9C27B0">
+    android:background="@drawable/bg">
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
@@ -17,7 +18,20 @@
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-<LinearLayout
+    <RelativeLayout
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFFFFFF">
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:id="@+id/imgV_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/reg_icon"/>
+    <LinearLayout
+    android:layout_below="@id/imgV_reg"
     android:id="@+id/lLayout_register"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -108,7 +122,7 @@
             android:padding="5dp"
             android:layout_below="@id/spin_team"
             android:textSize="17dp"/>
-        <EditText
+        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/etxtV_password"
@@ -116,7 +130,7 @@
             android:layout_below="@id/etxtV_username"
             android:padding="6dp"
             android:textSize="17dp"/>
-        <EditText
+        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/etxtV_confirm_password"
@@ -128,7 +142,8 @@
 </LinearLayout>
     <LinearLayout android:layout_below="@+id/lLayout_register"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -141,4 +156,5 @@
         android:id="@+id/btn_register"
         android:text="Register" />
     </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

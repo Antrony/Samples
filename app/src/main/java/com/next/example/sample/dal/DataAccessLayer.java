@@ -84,6 +84,13 @@ public class DataAccessLayer {
         }
         return mCursorFetch;
     }
+    public Cursor loginFetch(String tablename,String username,String usernamevalue,String password,String passwordvalue) throws SQLException {
+        Cursor mCursorFetch = mDb.rawQuery("SELECT * FROM "+tablename+" WHERE "+username+"='"+usernamevalue+"' AND "+password+"='"+passwordvalue+"'", null);
+        if (mCursorFetch != null) {
+            mCursorFetch.moveToFirst();
+        }
+        return mCursorFetch;
+    }
     public void updateSyncStatus( String mTableName,String mTableId,String mTableValue ) throws SQLException {
         Cursor mCursor;
         String syncStatus_query = "UPDATE " + mTableName + " SET "
