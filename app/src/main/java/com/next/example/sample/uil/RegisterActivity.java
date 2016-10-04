@@ -1,15 +1,10 @@
 package com.next.example.sample.uil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.SQLException;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,23 +14,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.next.example.sample.R;
-import com.next.example.sample.bal.Employee;
 import com.next.example.sample.bal.Validations;
 import com.next.example.sample.dal.DataAccessLayer;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 /**
  * Created by next on 29/9/16.
@@ -51,6 +31,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getViewCasting();
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Employee Registration");
         ArrayAdapter<String> spinneritems = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.teams));
         spin_team.setAdapter(spinneritems);
         spin_team.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -126,8 +109,9 @@ public class RegisterActivity extends AppCompatActivity {
         long insert_employee = dal.insertEmployee(reg_id_count, first_name, last_name, team, username, password,"0");
         if (insert_employee != 0) {
             Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(RegisterActivity.this, EmployeeListActivity.class);
+            Intent i = new Intent(RegisterActivity.this, MainActivity.class);
             startActivity(i);
+            finish();
         } else {
             Toast.makeText(this, "Registeration Failure", Toast.LENGTH_SHORT).show();
         }

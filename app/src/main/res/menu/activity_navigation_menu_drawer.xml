@@ -4,33 +4,33 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/tab_fragment_pager"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/pager"
             android:title="Tab Fragment Pager" />
         <item
             android:id="@+id/list"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/list"
             android:title="Employee Listview" />
         <item
             android:id="@+id/expandable_list"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/exp_list"
             android:title="Employee Expandable ListView" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/map"
             android:title="Map" />
     </group>
 
-    <item android:title="webservice">
-        <menu>
-            <item
-                android:id="@+id/nav_xml_parsing"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_json_parsing"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <!--<item android:title="webservice">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_xml_parsing"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_json_parsing"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
 
 </menu>

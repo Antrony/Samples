@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#8E24AA"
+    android:background="@drawable/bg"
     tools:context=".uil.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFFFFFF">
 
     <ImageView
         android:id="@+id/imgV_login"
@@ -25,31 +30,41 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imgV_login"
         android:hint="Username"/>
-    <EditText
-        android:id="@+id/eTxt_password"
-        android:inputType="textPassword"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/eTxt_username"
-        android:hint="Password"/>
-    <Button
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtLayoutpass"
+            android:layout_below="@id/eTxt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+            android:id="@+id/eTxt_password"
+            android:inputType="textPassword"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_login"
-        android:layout_below="@id/eTxt_password"
+        android:layout_below="@id/txtLayoutpass"
         android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:background="#9C27B0"
         android:text="Login"/>
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New User? Wanna to Register?"
+        android:textColor="#9C27B0"
         android:textStyle="italic"
         android:id="@+id/txtV_register"
         android:layout_below="@id/btn_login"
         android:layout_centerHorizontal="true"/>
 
+</RelativeLayout>
 </RelativeLayout>

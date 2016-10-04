@@ -3,6 +3,7 @@ package com.next.example.sample.uil;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -27,8 +28,10 @@ public class EmployeeExpandableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_expandable);
         getviewcasting();
-
-    prepareListData();
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Employee Expandable Listview");
+        prepareListData();
 
     listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
 
